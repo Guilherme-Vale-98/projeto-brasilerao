@@ -1,2 +1,4 @@
-package com.gm.brasilerao.controller;public class BrasileiraoController {
+package com.gm.brasilerao.controller;
+
+public class BrasileiraoController {
 }

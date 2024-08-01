@@ -1,2 +1,5 @@
-package com.gm.brasilerao.service;public class BrasileiraoService {
+package com.gm.brasilerao.service;
+
+public class BrasileiraoService {
+
 }

@@ -15,7 +15,7 @@ public class BrasileraoApplication {
 		RestClient restClient = RestClient.create();
 
 		Pokemon result = restClient.get()
-				.uri("https://pokeapi.co/api/v2/pokemon/pikachu")
+				.uri("https://pokeapi.co/api/v2/pokemon/charizard")
 				.retrieve()
 				.body(Pokemon.class);
 		System.out.println("Nome: " + result.name +
