@@ -1,4 +1,4 @@
-package com.gm.brasilerao.feign;
+package com.gm.brasilerao.feign.config;
 
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
