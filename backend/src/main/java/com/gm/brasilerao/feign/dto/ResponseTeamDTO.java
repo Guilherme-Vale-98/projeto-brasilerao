@@ -1,4 +1,6 @@
-package com.gm.brasilerao.dto;
+package com.gm.brasilerao.feign.dto;
+
+import com.gm.brasilerao.dto.TeamDTO;
 
 import java.util.List;
 
