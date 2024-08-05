@@ -8,11 +8,11 @@ import com.gm.brasilerao.feign.controllers.FeignClientCompetition;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CampeonatoService {
+public class ChampionshipService {
     private final FeignClientTeams feignClientTeams;
     private final FeignClientCompetition feignClientCompetition;
 
-    public CampeonatoService(FeignClientTeams feignClientTeams, FeignClientCompetition feignClientCompetition) {
+    public ChampionshipService(FeignClientTeams feignClientTeams, FeignClientCompetition feignClientCompetition) {
         this.feignClientTeams = feignClientTeams;
         this.feignClientCompetition = feignClientCompetition;
     }
