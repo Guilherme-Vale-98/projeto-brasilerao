@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+/*   background: #125f12; */
+}
 
 .yellow-gradient {
     background: -webkit-radial-gradient(#fc4a1a, #f7b733);
