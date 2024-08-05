@@ -30,8 +30,8 @@ public class ChampionshipService {
     }
 
 
-    public ResponseMatchDTO ListLastFiveMatches(Integer idTeam,String idCompetition,Integer limit) {
-        var matches=feignClientTeams.getLastMatchesForTeam(idTeam,idCompetition,limit) ;
+    public ResponseMatchDTO ListLastMatchesByTeam(Integer idTeam,String idCompetition,String status,Integer limit) {
+        var matches=feignClientTeams.getLastMatchesForTeam(idTeam,idCompetition,status,limit) ;
         return matches;
     }
 }
