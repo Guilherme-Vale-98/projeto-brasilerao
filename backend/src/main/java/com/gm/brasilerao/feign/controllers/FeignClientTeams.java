@@ -4,6 +4,7 @@ import com.gm.brasilerao.feign.config.FeignClientConfig;
 import com.gm.brasilerao.feign.dto.ResponseMatchDTO;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @org.springframework.cloud.openfeign.FeignClient(
         name = "apiClientTeams",
@@ -12,6 +13,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 )
 public interface FeignClientTeams {
     @GetMapping("/{idTeam}/matches?status=FINISHED&competitions={idCompetition}&limit={limit}")
-    ResponseMatchDTO getLastMatchesForTeam(@PathVariable("idTeam") Integer idTeam, @PathVariable("idCompetition") String idCompetition, @PathVariable("limit") Integer limit);
+    ResponseMatchDTO getLastMatchesForTeam(@PathVariable("idTeam") Integer idTeam,
+                                           @PathVariable("idCompetition") String idCompetition,
+                                           @PathVariable("limit") Integer limit);
+
+
+
+
+
 
 }
+
+
