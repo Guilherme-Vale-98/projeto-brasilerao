@@ -12,15 +12,12 @@ import org.springframework.web.bind.annotation.RequestParam;
         configuration = FeignClientConfig.class
 )
 public interface FeignClientTeams {
-    @GetMapping("/{idTeam}/matches?status=FINISHED&competitions={idCompetition}&limit={limit}")
+    public final String STATUS="FINISHED";
+    @GetMapping("/{idTeam}/matches")
     ResponseMatchDTO getLastMatchesForTeam(@PathVariable("idTeam") Integer idTeam,
-                                           @PathVariable("idCompetition") String idCompetition,
-                                           @PathVariable("limit") Integer limit);
-
-
-
-
-
+                                           @RequestParam("idCompetition") String idCompetition,
+                                           @RequestParam("status") String status,
+                                           @RequestParam("limit") Integer limit);
 
 }
 

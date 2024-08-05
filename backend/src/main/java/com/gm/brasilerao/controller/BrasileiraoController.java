@@ -29,7 +29,8 @@ public class BrasileiraoController {
     }
     @GetMapping("/{idCompetition}/teams/{idTeam}/matches")
     public ResponseEntity<ResponseMatchDTO> getLastMatchesByTeam(@PathVariable String idCompetition,@PathVariable Integer idTeam,@RequestParam(defaultValue = "5") Integer limit) {
-        var matches= championshipService.ListLastFiveMatches(idTeam,idCompetition,limit);
+        final String STATUS="FINISHED";
+        var matches= championshipService.ListLastMatchesByTeam(idTeam,idCompetition,STATUS,limit);
         return ResponseEntity.ok(matches);
     }
 }
