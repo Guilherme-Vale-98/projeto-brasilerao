@@ -1,3 +1,4 @@
+
 package com.gm.brasilerao.feign.controllers;
 
 import com.gm.brasilerao.feign.config.FeignClientConfig;
@@ -14,12 +15,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
         configuration = FeignClientConfig.class
 )
 public interface FeignClientCompetition {
-    @RequestMapping("")
-    @GetMapping("/{idCompeticao}/standings")
-    ResponseCampeonatoDTO getStandings(@PathVariable("idCompeticao") String idCompeticao);
 
-    @GetMapping("/{idCompeticao}/teams")
-    ResponseTeamDTO getTeams(@PathVariable("idCompeticao") String idCompeticao);
+    @GetMapping("/{idCompetition}/standings")
+    ResponseCampeonatoDTO getStanding(@PathVariable("idCompetition") String idCompetition);
+
+    @GetMapping("/{idCompetition}/teams")
+    ResponseTeamDTO getTeams(@PathVariable("idCompetition") String idCompetition);
 
 
 

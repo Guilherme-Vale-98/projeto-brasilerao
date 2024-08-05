@@ -19,22 +19,19 @@ public class CampeonatoService {
 
 
 
-    public ResponseCampeonatoDTO listStanding(String idCompetition) {
-        var response= feignClientCompetition.getStandings(idCompetition);
-
-        return  response;
+    public ResponseCampeonatoDTO ListStanding(String idCompetition) {
+        var Standing= feignClientCompetition.getStanding(idCompetition);
+        return  Standing;
     }
-    public ResponseTeamDTO listTeams(String idCompetition) {
-        var response= feignClientCompetition.getTeams(idCompetition);
-        System.out.println(response);
-        return  response;
+    public ResponseTeamDTO ListTeams(String idCompetition) {
+        var teams= feignClientCompetition.getTeams(idCompetition);
+        return teams;
 
     }
 
 
     public ResponseMatchDTO ListLastFiveMatches(Integer idTeam,String idCompetition,Integer limit) {
-        var response=feignClientTeams.getTeamsLast5MatchesForTeam(idTeam,idCompetition,limit) ;
-        System.out.println(response);
-        return  response;
+        var matches=feignClientTeams.getLastMatchesForTeam(idTeam,idCompetition,limit) ;
+        return matches;
     }
 }

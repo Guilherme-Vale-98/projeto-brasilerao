@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/campeonatos")
+@RequestMapping("/api/championship")
 public class BrasileiraoController {
     private final CampeonatoService campeonatoService;
 
@@ -18,18 +18,18 @@ public class BrasileiraoController {
 
     @GetMapping("/{idCompetition}/standings")
     public ResponseEntity<ResponseCampeonatoDTO> getStandings(@PathVariable String idCompetition) {
-       var campeonato=campeonatoService.listStanding(idCompetition);
-        return ResponseEntity.ok(campeonato);
+        var championship=campeonatoService.ListStanding(idCompetition);
+        return ResponseEntity.ok(championship);
     }
 
-   @GetMapping("/{idCompetition}/teams")
-   public ResponseEntity<ResponseTeamDTO> getTeams(@PathVariable String idCompetition) {
-        var teams=campeonatoService.listTeams(idCompetition);
-       return ResponseEntity.ok(teams);
-   }
-   @GetMapping("/{idCompetition}/teams/{idTeam}/matches/last{limit}")
-    public ResponseEntity<ResponseMatchDTO> getLastMatchesbyTeam(@PathVariable String idCompetition,@PathVariable Integer idTeam,@PathVariable Integer limit) {
+    @GetMapping("/{idCompetition}/teams")
+    public ResponseEntity<ResponseTeamDTO> getTeams(@PathVariable String idCompetition) {
+        var teams=campeonatoService.ListTeams(idCompetition);
+        return ResponseEntity.ok(teams);
+    }
+    @GetMapping("/{idCompetition}/teams/{idTeam}/matches/last{limit}")
+    public ResponseEntity<ResponseMatchDTO> getLastMatchesByTeam(@PathVariable String idCompetition,@PathVariable Integer idTeam,@PathVariable Integer limit) {
         var matches=campeonatoService.ListLastFiveMatches(idTeam,idCompetition,limit);
         return ResponseEntity.ok(matches);
-   }
+    }
 }

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
         configuration = FeignClientConfig.class
 )
 public interface FeignClientTeams {
-    @GetMapping("/{idTeam}/matches?status=FINISHED&competitions={idCompeticao}&limit={limit}")
-    ResponseMatchDTO getTeamsLast5MatchesForTeam(@PathVariable("idTeam") Integer idTeam, @PathVariable("idCompeticao") String idCompeticao, @PathVariable("limit") Integer limit);
+    @GetMapping("/{idTeam}/matches?status=FINISHED&competitions={idCompetition}&limit={limit}")
+    ResponseMatchDTO getLastMatchesForTeam(@PathVariable("idTeam") Integer idTeam, @PathVariable("idCompetition") String idCompetition, @PathVariable("limit") Integer limit);
 
 }
