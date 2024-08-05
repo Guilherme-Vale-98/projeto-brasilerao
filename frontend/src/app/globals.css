@@ -1,4 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-  
+
+
+.yellow-gradient {
+    background: -webkit-radial-gradient(#fc4a1a, #f7b733);
+    background:  linear-gradient( 113.9deg,  rgb(227, 114, 72) 13%, rgba(213,32,39,1) 48.8%, rgb(227, 65, 24) 85.9% );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+.black-stroke{
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
