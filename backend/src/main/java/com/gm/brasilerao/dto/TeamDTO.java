@@ -1,4 +1,4 @@
 package com.gm.brasilerao.dto;
 
-public record TeamDTO(Integer id,String shortName,String tla) {
+public record TeamDTO(Integer id,String shortName,String tla, String crest) {
 }
