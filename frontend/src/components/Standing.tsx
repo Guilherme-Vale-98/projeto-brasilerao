@@ -6,7 +6,7 @@ type Props = {}
 
 const Standing = (props: Props) => {
     return (
-        <section className='w-[80%] mt-10 mx-auto min-h-[600px] text-black'>
+        <section className='w-[80%] my-10 mx-auto min-h-[600px] text-black'>
             <h1 className='font-bold text-4xl'>Tabela do Campeonato</h1>
             <div className='my-10 relative'>
                 <LucideSearch className='absolute text-slate-400 ml-1 top-2'/>
