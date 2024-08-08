@@ -20,9 +20,15 @@ public class ChampionshipService {
 
 
     public ResponseCampeonatoDTO ListStanding(String idCompetition) {
-        var Standing= feignClientCompetition.getStanding(idCompetition);
-        return  Standing;
+        var standing = feignClientCompetition.getStanding(idCompetition);
+        return  standing;
     }
+
+    public ResponseMatchDTO ListStandingMatches(String idCompetition) {
+        ResponseMatchDTO standingMatches = feignClientCompetition.getAllFinishedMatches(idCompetition);
+        return  standingMatches;
+    }
+
     public ResponseTeamDTO ListTeams(String idCompetition) {
         var teams= feignClientCompetition.getTeams(idCompetition);
         return teams;

@@ -19,6 +19,9 @@ public interface FeignClientCompetition {
     @GetMapping("/{idCompetition}/standings")
     ResponseCampeonatoDTO getStanding(@PathVariable("idCompetition") String idCompetition);
 
+    @GetMapping("/{idCompetition}/matches?status=FINISHED")
+    ResponseMatchDTO getAllFinishedMatches(@PathVariable("idCompetition") String idCompetition);
+
     @GetMapping("/{idCompetition}/teams")
     ResponseTeamDTO getTeams(@PathVariable("idCompetition") String idCompetition);
 
