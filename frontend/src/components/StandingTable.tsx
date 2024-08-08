@@ -3,12 +3,26 @@ import { LucideCheck, LucideMinus, LucideX, LucideXCircle } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react';
 
+const processFormerMatches = (matchResult: string) =>{
+    switch (matchResult) {
+        case 'W':
+          return <LucideCheck size={20} className='p-1 bg-green-600 text-white rounded-full'/>;
+        case 'D':
+          return <LucideMinus size={20} className='p-1 bg-gray-600 text-white rounded-full'/>;
+        case 'L':
+          return <LucideX size={20} className='p-1 bg-red-600 text-white rounded-full'/>;
+        default:
+          return matchResult;
+      }
+}
+
 const StandingTable = async () => {
-    const res = await fetch('http://localhost:8080/api/championship/BSA/standings');
+    const res = await fetch('http://localhost:8080/api/championship/BSA/standingsWithMatches');
     const data = await res.json();
 
     const standings: Standing = data.standings[0]
     const table = standings.table
+    table.map
     return (
         <div className="">
             <table className="min-w-full bg-white">
@@ -45,8 +59,7 @@ const StandingTable = async () => {
                             <td className="py-2">{tableItem.goalsAgainst}</td>
                             <td className="py-2">{tableItem.goalsFor - tableItem.goalsAgainst}</td>
                             <td className="py-2">{(tableItem.won / tableItem.playedGames * 100).toFixed(2)}%</td>
-                            <td className="py-2"></td>
-
+                            <td className="py-2 flex justify-center gap-1">{tableItem.formerMatches.slice(-5).map(result => processFormerMatches(result))}</td>
                         </tr>
                     ))}
                 </tbody>
