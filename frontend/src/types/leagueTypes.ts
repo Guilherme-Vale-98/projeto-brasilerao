@@ -16,6 +16,7 @@ export interface Table {
     goalsFor: number
     goalsAgainst: number
     goalsDifference: number
+    formerMatches: string[]
   }
   export interface Standing {
     table: Table[]
