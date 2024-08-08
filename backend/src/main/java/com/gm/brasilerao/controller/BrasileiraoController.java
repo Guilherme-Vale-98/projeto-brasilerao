@@ -1,11 +1,18 @@
 package com.gm.brasilerao.controller;
 
+import com.gm.brasilerao.dto.MatchDTO;
+import com.gm.brasilerao.dto.TableEntryDTO;
 import com.gm.brasilerao.feign.dto.ResponseCampeonatoDTO;
 import com.gm.brasilerao.feign.dto.ResponseMatchDTO;
 import com.gm.brasilerao.feign.dto.ResponseTeamDTO;
 import com.gm.brasilerao.service.ChampionshipService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/championship")
@@ -22,6 +29,12 @@ public class BrasileiraoController {
         return ResponseEntity.ok(championship);
     }
 
+    @GetMapping("/{idCompetition}/standings/matches")
+    public ResponseEntity<ResponseMatchDTO> getStandingsMatches(@PathVariable String idCompetition) {
+        var championshipMatches = championshipService.ListStandingMatches(idCompetition);
+        return ResponseEntity.ok(championshipMatches);
+    }
+
     @GetMapping("/{idCompetition}/teams")
     public ResponseEntity<ResponseTeamDTO> getTeams(@PathVariable String idCompetition) {
         var teams= championshipService.ListTeams(idCompetition);
@@ -33,4 +46,7 @@ public class BrasileiraoController {
         var matches= championshipService.ListLastMatchesByTeam(idTeam,idCompetition,STATUS,limit);
         return ResponseEntity.ok(matches);
     }
+
+
+
 }
