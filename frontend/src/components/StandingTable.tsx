@@ -17,7 +17,8 @@ const processFormerMatches = (matchResult: string) =>{
 }
 
 const StandingTable = async () => {
-    const res = await fetch('http://localhost:8080/api/championship/BSA/standingsWithMatches');
+    const res = await fetch('http://localhost:8080/api/championship/BSA/standings',
+        { next: { revalidate: 60*30 } });
     const data = await res.json();
 
     const standings: Standing = data.standings[0]

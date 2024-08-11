@@ -19,9 +19,9 @@ const Footer = (props: Props) => {
                         <span className='mt-1 ml-3'>Brasileirão</span>
                     </div>
                     <div className='flex text-lg gap-4 flex-col'>
-                        <span className=' hover:border-b-2 h-8'>Sobre nós</span>
-                        <span className=' hover:border-b-2 h-8'>Termo de compromisso</span>
-                        <span className=' hover:border-b-2 h-8'>Termo de privacidade</span>
+                        <span className='cursor-pointer hover:border-b-2 h-8'>Sobre nós</span>
+                        <span className='cursor-pointer hover:border-b-2 h-8'>Termo de compromisso</span>
+                        <span className='cursor-pointer hover:border-b-2 h-8'>Termo de privacidade</span>
                     </div>
                     <div className='flex font-semibold  flex-col'>
                         <h1 className='text-3xl'>Conheça os criadores</h1>

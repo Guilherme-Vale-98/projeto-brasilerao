@@ -21,3 +21,22 @@ export interface Table {
   export interface Standing {
     table: Table[]
   }
+
+  export interface Match {
+    matchday: number
+    score: Score
+    homeTeam: Team
+    awayTeam: Team
+    utcDate: Date
+  }
+  
+  export interface Score {
+    winner: string
+    fullTime: FullTime
+  }
+  
+  export interface FullTime {
+    home: number
+    away: number
+  }
+  

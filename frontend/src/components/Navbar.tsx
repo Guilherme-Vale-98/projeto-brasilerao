@@ -13,7 +13,7 @@ const Navbar = (props: Props) => {
                 <Link href='/'>
                     <Image src={logo} alt='TraversyPress' width={40} />
                 </Link>
-                <span className='mt-1 ml-3'>Brasileirão</span>
+                <span className='ml-3'>Brasileirão</span>
             </div>
         </nav>
     )

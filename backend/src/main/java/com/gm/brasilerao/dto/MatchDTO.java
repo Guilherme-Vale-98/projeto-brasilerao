@@ -1,4 +1,6 @@
 package com.gm.brasilerao.dto;
 
-public record MatchDTO(Integer matchday,ScoreDTO score,TeamDTO homeTeam,TeamDTO awayTeam) {
+import java.time.Instant;
+
+public record MatchDTO(Integer matchday, ScoreDTO score, TeamDTO homeTeam, TeamDTO awayTeam, Instant utcDate) {
 }
