@@ -7,14 +7,14 @@ type Props = {}
 
 const Hero = (props: Props) => {
     return (
-        <section className='relative  flex'>
+        <section className='relative h-[330px] flex'>
             <div className='-z-10 absolute w-full h-[330px] '>
                 <Image src={estadio}
                     layout="fill"
                     quality={100} alt='estádio' />
             </div>
-            <div className='w-full hidden sm:flex justify-end '>
-                    <Image src={brasao} alt='brasao do campeonato' width={600} quality={100}></Image>
+            <div className='w-full sm:h-[300px]  sm:flex justify-end '>
+                    <Image src={brasao} alt='brasao do campeonato'  width={600} quality={100}></Image>
             </div>
         </section>
     )

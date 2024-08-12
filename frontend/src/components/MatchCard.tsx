@@ -28,7 +28,7 @@ const MatchCard = ({ match }: Props) => {
                     <Image width={55} className='mb-2 relative left-1/2 -translate-x-1/2' height={10} src={homeTeam.crest} alt={`escudo do flamengo`}></Image>
                     <span className='text-lg font-semibold'>{homeTeam.shortName}</span>
                 </div>
-                <div className='w-1/3  flex items-center justify-center text-3xl font-semibold'>{score.fullTime.home} - {score.fullTime.away}</div>
+                <div className='w-1/3 border h-24  flex items-center justify-center text-3xl font-semibold'>{score.fullTime.home} - {score.fullTime.away}</div>
                 <div className='w-1/3 text-center '>
                     <Image width={55} className='mb-2 relative left-1/2 -translate-x-1/2' height={10} src={awayTeam.crest} alt={`escudo do flamengo`}></Image>
                     <span className='text-lg font-semibold'>{awayTeam.shortName}</span>
