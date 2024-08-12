@@ -14,6 +14,7 @@ const Navbar = (props: Props) => {
                     <Link href='/'>
                         <Image src={logo} alt='TraversyPress' width={40} />
                     </Link>
+                    <span className='sm:block hidden  ml-3'>Brasileirão</span>
                     
                 </div>
                 <div className='flex gap-3 sm:gap-0 text-lg items-center justify-around  sm:w-1/4'>

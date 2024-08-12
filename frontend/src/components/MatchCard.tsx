@@ -13,7 +13,7 @@ const MatchCard = ({ match }: Props) => {
     const date = new Date(utcDate)
 
     return (
-        <Card className='border overflow-hidden border-[#0e4515] relative w-[24rem] text-white h-48 py-4 card-gradient ' >
+        <Card className=' overflow-hidden border-[#0e4515] relative w-[24rem] text-white h-48 py-4 card-gradient ' >
             <div className='absolute w-[150px] h-[150px] left-[300px]  top-[-55px]'>
                 <Image width={150} className='relative' height={10} src={bola} alt={`escudo do flamengo`}></Image>
             </div>
@@ -26,12 +26,12 @@ const MatchCard = ({ match }: Props) => {
             <CardContent>
                 <div className='w-1/3 text-center'>
                     <Image width={55} className='mb-2 relative left-1/2 -translate-x-1/2' height={10} src={homeTeam.crest} alt={`escudo do flamengo`}></Image>
-                    <span className='text-lg font-semibold'>{homeTeam.shortName}</span>
+                    <span className='text-bs font-semibold'>{homeTeam.shortName}</span>
                 </div>
-                <div className='w-1/3 border h-24  flex items-center justify-center text-3xl font-semibold'>{score.fullTime.home} - {score.fullTime.away}</div>
-                <div className='w-1/3 text-center '>
+                <div className='min-w-[33.333333%] h-24   flex items-center justify-center text-3xl font-semibold'>{score.fullTime.home} - {score.fullTime.away}</div>
+                <div className='w-1/3  text-center '>
                     <Image width={55} className='mb-2 relative left-1/2 -translate-x-1/2' height={10} src={awayTeam.crest} alt={`escudo do flamengo`}></Image>
-                    <span className='text-lg font-semibold'>{awayTeam.shortName}</span>
+                    <span className='text-bs w-1/2 font-semibold'>{awayTeam.shortName}</span>
                 </div>
             </CardContent>
         </Card>

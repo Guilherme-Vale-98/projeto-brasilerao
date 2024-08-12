@@ -38,8 +38,8 @@ const StandingTable = async () => {
                         <th className=" py-2">D</th>
                         <th className=" py-2">GP</th>
                         <th className=" py-2">GC</th>
-                        <th className="hidden sm:block py-2">SG</th>
-                        <th className=" hidden sm:block py-2">%</th>
+                        <th className="mobile-hidden py-2">SG</th>
+                        <th className=" mobile-hidden py-2">%</th>
                         <th className=" py-2">Últ.Jogos</th>
                     </tr>
                 </thead>
@@ -49,7 +49,7 @@ const StandingTable = async () => {
                             <td className="py-2">{tableItem.position}</td>
                             <td className="py-2 font-bold flex text-left">
                                 <Image width={24} className='mr-3' height={10} src={tableItem.team.crest} alt={`escudo do ${tableItem.team.shortName}`}></Image>
-                                <span className="hidden sm:block">{tableItem.team.shortName}</span>
+                                <span className="hidden sm:inline">{tableItem.team.shortName}</span>
                             </td>
                             <td className="py-2">{tableItem.points}</td>
                             <td className="py-2">{tableItem.playedGames}</td>
@@ -58,8 +58,8 @@ const StandingTable = async () => {
                             <td className="py-2">{tableItem.lost}</td>
                             <td className="py-2">{tableItem.goalsFor}</td>
                             <td className="py-2">{tableItem.goalsAgainst}</td>
-                            <td className="py-2 hidden sm:block">{tableItem.goalsFor - tableItem.goalsAgainst}</td>
-                            <td className="py-2 hidden sm:block">{(tableItem.won / tableItem.playedGames * 100).toFixed(2)}%</td>
+                            <td className="mobile-hidden py-2">{tableItem.goalsFor - tableItem.goalsAgainst}</td>
+                            <td className="mobile-hidden py-2">{(tableItem.won / tableItem.playedGames * 100).toFixed(2)}%</td>
                             <td className="py-2 flex justify-center gap-1">{tableItem.formerMatches.slice(-5).map(result => processFormerMatches(result))}</td>
                         </tr>
                     ))}
