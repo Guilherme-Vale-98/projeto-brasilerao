@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import logo from '../img/logo.png'
-import { Instagram, Linkedin, LinkedinIcon, LucideLinkedin } from 'lucide-react'
+import { Github, Instagram, Linkedin, LinkedinIcon, LucideLinkedin } from 'lucide-react'
 
 
 type Props = {}
@@ -19,7 +19,7 @@ const Footer = (props: Props) => {
                         <span className='mt-1 ml-3'>Brasileirão</span>
                     </div>
                     <div className='flex text-lg gap-4 flex-col'>
-                        <span className='cursor-pointer hover:border-b-2 h-8'>Sobre nós</span>
+                        <Link href="/sobre" className='cursor-pointer hover:border-b-2 h-8'>Sobre nós</Link>
                         <span className='cursor-pointer hover:border-b-2 h-8'>Termo de compromisso</span>
                         <span className='cursor-pointer hover:border-b-2 h-8'>Termo de privacidade</span>
                     </div>
@@ -28,16 +28,18 @@ const Footer = (props: Props) => {
                         <hr className='mt-2'></hr>
                         <div className='flex justify-between my-2'>
                             <h2 className='text-xl '>Matheus Lustosa</h2>
-                            <div className='flex gap-1'>
-                                <span><Instagram/> </span>
-                                <span><LinkedinIcon/> </span>
+                            <div className='flex gap-3'>
+                                <Link  rel="noopener noreferrer" target="_blank" href='https://github.com/matheusLustosa23'><Github /> </Link>
+                                <Link  rel="noopener noreferrer" target="_blank" href='/'><Instagram /> </Link>
+                                <Link  rel="noopener noreferrer" target="_blank" href='/' ><LinkedinIcon /> </Link>
                             </div>
                         </div>
                         <div className='flex justify-between my-2'>
                             <h2 className='text-xl '>Guilherme Vale</h2>
-                            <div className='flex gap-1'>
-                                <span><Instagram/> </span>
-                                <span><LinkedinIcon/> </span>
+                            <div className='flex gap-3'>
+                                <Link  rel="noopener noreferrer" target="_blank" href='https://github.com/Guilherme-Vale-98'><Github /> </Link>
+                                <Link  rel="noopener noreferrer" target="_blank" href='/'><Instagram /> </Link>
+                                <Link  rel="noopener noreferrer" target="_blank" href='/' ><LinkedinIcon /> </Link>
                             </div>
                         </div>
                     </div>

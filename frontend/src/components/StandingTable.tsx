@@ -17,7 +17,7 @@ const processFormerMatches = (matchResult: string) =>{
 }
 
 const StandingTable = async () => {
-    const res = await fetch('http://localhost:8080/api/championship/BSA/standings',
+    const res = await fetch('http://18.230.59.141:8080/api/championship/BSA/standings',
         { next: { revalidate: 60*30 } });
     const data = await res.json();
 
@@ -29,18 +29,18 @@ const StandingTable = async () => {
             <table className="min-w-full bg-white">
                 <thead className="bg-gray-800 h-4 text-white">
                     <tr>
-                        <th className="w-1/15 py-2">Posição</th>
-                        <th className="w-3/15 text-left py-2">Time</th>
-                        <th className="w-1/15 py-2">P</th>
-                        <th className="w-1/15 py-2">J</th>
-                        <th className="w-1/15 py-2">V</th>
-                        <th className="w-1/15 py-2">E</th>
-                        <th className="w-1/15 py-2">D</th>
-                        <th className="w-1/15 py-2">GP</th>
-                        <th className="w-1/15 py-2">GC</th>
-                        <th className="w-1/15 py-2">SG</th>
-                        <th className="w-1/15 py-2">%</th>
-                        <th className="w-3/15 py-2">Últ.Jogos</th>
+                        <th className=" py-2">Posição</th>
+                        <th className="text-left py-2">Time</th>
+                        <th className="py-2">P</th>
+                        <th className="py-2">J</th>
+                        <th className=" py-2">V</th>
+                        <th className=" py-2">E</th>
+                        <th className=" py-2">D</th>
+                        <th className=" py-2">GP</th>
+                        <th className=" py-2">GC</th>
+                        <th className=" py-2">SG</th>
+                        <th className=" py-2">%</th>
+                        <th className=" py-2">Últ.Jogos</th>
                     </tr>
                 </thead>
                 <tbody>

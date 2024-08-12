@@ -19,7 +19,7 @@ const MatchesGrid = ({ matches }: Props) => {
         <button 
             key={index} 
             onClick={(e) => handleClick(e)} 
-            className={`w-12 ${uniqueMatchday == matchday? "bg-[#4242c4]" : ""} text-xl rounded-md h-12 hover:bg-[#4242c4] transform`}>
+            className={`w-12 ${uniqueMatchday == matchday? "bg-[#4242c4]" : ""} text-xl rounded-md border-[#4242c4] border-2 h-12 hover:bg-[#4242c4] transform`}>
             {uniqueMatchday}
         </button>
     ));
@@ -40,16 +40,16 @@ const MatchesGrid = ({ matches }: Props) => {
     }
 
     return (
-        <div>
-            <div className='flex gap-8 items-center'>
+        <div className=''>
+            <div className='flex gap-4 justify-center md:gap-8 items-center'>
                 <h1 className='text-xl font-bold'>Rodada: </h1>
-                <div className='flex flex-wrap gap-4 '>
+                <div className='flex w-[70%] flex-wrap gap-2 md:gap-3 '>
                     {matchdaysButtons}      
                 </div>
             </div>
 
-            <div className='gap-4 my-4 flex'>
-                <div className='grid grid-cols-3 gap-4'>
+            <div className='gap-4 items-center justify-center my-4 mx-auto overflow-scroll flex'>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
                     {filteredMatches.map((match, index) => (
                         <MatchCard key={index} match={match} />
                     ))}

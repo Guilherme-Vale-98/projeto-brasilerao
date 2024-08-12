@@ -11,26 +11,13 @@ type Props = {
 const MatchCard = ({ match }: Props) => {
     const { homeTeam, awayTeam, score, matchday, utcDate } = match
     const date = new Date(utcDate)
-    const months = [
-        "Janeiro",
-        "Fevereiro",
-        "Março",
-        "Abril",
-        "Maio",
-        "Junho",
-        "Julho",
-        "Agosto",
-        "Setembro",
-        "Outubro",
-        "Novembro",
-        "Dezembro"
-    ];
+
     return (
         <Card className='border overflow-hidden border-[#0e4515] relative w-[24rem] text-white h-48 py-4 card-gradient ' >
             <div className='absolute w-[150px] h-[150px] left-[300px]  top-[-55px]'>
                 <Image width={150} className='relative' height={10} src={bola} alt={`escudo do flamengo`}></Image>
             </div>
-            <div className='absolute w-[150px] h-[150px] right-[300px]  top-[130px]'>
+            <div className='absolute w-[150px] h-[150px] left-[120px]  top-[130px]'>
                 <Image width={150} className='relative' height={10} src={bola} alt={`escudo do flamengo`}></Image>
             </div>
             <div className='text-lg text-center'>
