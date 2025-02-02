@@ -31,7 +31,7 @@ const Footer = (props: Props) => {
                             <div className='flex gap-3'>
                                 <Link  rel="noopener noreferrer" target="_blank" href='https://github.com/matheusLustosa23'><Github /> </Link>
                                 <Link  rel="noopener noreferrer" target="_blank" href='/'><Instagram /> </Link>
-                                <Link  rel="noopener noreferrer" target="_blank" href='/' ><LinkedinIcon /> </Link>
+                                <Link  rel="noopener noreferrer" target="_blank" href='https://www.linkedin.com/in/matheus-lustosa-8472391a3/' ><LinkedinIcon /> </Link>
                             </div>
                         </div>
                         <div className='flex justify-between my-2'>

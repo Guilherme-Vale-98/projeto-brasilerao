@@ -34,3 +34,25 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+Leagues available for free:
+
+BSA-Campeonato Brasileiro Série A
+PL-Premier League
+ELC-Championship
+EC-European Championship
+CL-UEFA Champions League
+FL1-Ligue 1
+BL1-Bundesliga
+SA-Serie A
+DED-Eredivisie
+PPL-Primeira Liga
+CLI-Copa Libertadores
+PD-Primera Division
+WC-FIFA World Cup
+
+
+
+
+
+

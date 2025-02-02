@@ -23,18 +23,18 @@ const sobre = (props: Props) => {
                         <span className='border-t-2 pt-8 border-gray-600  font-semibold text-gray-600 text-center text-2xl'>Matheus Lustosa</span>
                     </CardHeader>
                     <CardContent className='border-b-2 mx-4  border-gray-600'>
-                        
-                    </CardContent>
-                    <CardFooter>
-                        <div className='flex w-full mt-4 items-center justify-between'>
-                            <button className='h-14 p-4 font-bold border-2 border-black hover:bg-black hover:text-white rounded-md'>PORTFOLIO</button>
-                            <div className='flex gap-3'>
-                                <Link href='/'><Github/> </Link>
-                                <Link href='/'><Instagram/> </Link>
-                                <Link href='/' ><LinkedinIcon/> </Link>
-                            </div>
-                        </div>
-                    </CardFooter>
+                Desenvolvedor fullstack atuou neste projeto construindo a parte do back end utilizando springboot ,api restfull, e disponibilizando os endpoints para consumo do front end
+            </CardContent>
+            <CardFooter>
+                <div className='flex w-full mt-4 items-center justify-between'>
+                    <button className='h-14 p-4 font-bold border-2 border-black hover:bg-black hover:text-white rounded-md'>PORTFOLIO</button>
+                    <div className='flex gap-3'>
+                        <Link href='https://github.com/matheusLustosa23'><Github /> </Link>
+                        <Link href='/'><Instagram /> </Link>
+                        <Link href='https://www.linkedin.com/in/matheus-lustosa-8472391a3/' ><LinkedinIcon /> </Link>
+                    </div>
+                </div>
+            </CardFooter>
                 </Card>
             </div>
 
