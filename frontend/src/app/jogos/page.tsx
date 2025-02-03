@@ -6,7 +6,7 @@ type Props = {}
 
 const page = async (props: Props) => {
 
-  const res = await fetch('http://18.230.59.141:8080/api/championship/BSA/standings/matches',
+  const res = await fetch('http://localhost:8023/api/championship/BSA/standings/matches',
     { next: { revalidate: 60*30 } }
   );
   const data = await res.json();
