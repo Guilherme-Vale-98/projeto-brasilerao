@@ -8,7 +8,7 @@ type Props = {
 }
 
 const page = async ({searchParams}: Props) => {
-
+  let title = "";
   const leagues = {
     BSA: "Campeonato Brasileiro Série A",
     PL: "Premier League",
@@ -35,11 +35,19 @@ if(typeof league !== "string" || !Object.keys(leagues).includes(league)){
   if(matches.length <= 0){
     redirect("/")
   }
+  const firstDate = new Date(matches[0].utcDate);
+  const secondDate = new Date(matches[matches.length - 1].utcDate);
+  if(secondDate.getFullYear() != firstDate.getFullYear()){
+    title = `Jogos da temporada ${firstDate.getFullYear()}-${secondDate.getFullYear()}`
+  }else{
+    title = `Jogos da temporada ${firstDate.getFullYear()}`
+  }
+
 
   return (
     <div className='bg-[#1B1D25] py-10'>
       <section className='w-[80%] text-white mx-auto '>
-        <h1 className='text-3xl text-center font-bold mb-4'>Jogos da temporada 2024</h1>
+        <h1 className='text-3xl text-center font-bold mb-4'>{title}</h1>
         <div>
           <MatchesGrid matches={matches}/>
         </div>
