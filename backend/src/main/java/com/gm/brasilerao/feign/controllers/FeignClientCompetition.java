@@ -26,8 +26,4 @@ public interface FeignClientCompetition {
     ResponseTeamDTO getTeams(@PathVariable("idCompetition") String idCompetition);
 
 
-
-
-
-
 }

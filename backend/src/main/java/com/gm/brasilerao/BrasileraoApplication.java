@@ -9,9 +9,6 @@ import org.springframework.web.client.RestClient;
 @SpringBootApplication
 @EnableFeignClients
 public class BrasileraoApplication {
-
-
-
 	public static void main(String[] args) {
 		SpringApplication.run(BrasileraoApplication.class, args);
 

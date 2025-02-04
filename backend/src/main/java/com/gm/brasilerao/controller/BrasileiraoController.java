@@ -9,13 +9,11 @@ import com.gm.brasilerao.service.ChampionshipService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 
 @RestController
 @RequestMapping("/api/championship")
+@CrossOrigin(origins = "http://localhost:3000/", maxAge = 3600)
 public class BrasileiraoController {
     private final ChampionshipService championshipService;
 
@@ -46,7 +44,6 @@ public class BrasileiraoController {
         var matches= championshipService.ListLastMatchesByTeam(idTeam,idCompetition,STATUS,limit);
         return ResponseEntity.ok(matches);
     }
-
 
 
 }

@@ -19,6 +19,7 @@ export interface Table {
     formerMatches: string[]
   }
   export interface Standing {
+    emblem: string
     table: Table[]
   }
 

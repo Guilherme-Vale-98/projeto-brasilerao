@@ -15,17 +15,17 @@ const MatchCard = ({ match }: Props) => {
     return (
         <Card className=' overflow-hidden border-[#0e4515] relative w-[24rem] text-white h-48 py-4 card-gradient ' >
             <div className='absolute w-[150px] h-[150px] left-[300px]  top-[-55px]'>
-                <Image width={150} className='relative' height={10} src={bola} alt={`escudo do flamengo`}></Image>
+                <Image width={150} className='relative' height={10} src={bola} alt={`bola no background`}></Image>
             </div>
             <div className='absolute w-[150px] h-[150px] left-[120px]  top-[130px]'>
-                <Image width={150} className='relative' height={10} src={bola} alt={`escudo do flamengo`}></Image>
+                <Image width={150} className='relative' height={10} src={bola} alt={`bola no background`}></Image>
             </div>
             <div className='text-lg text-center'>
                 {date.toLocaleString("pt-br").slice(0, 10)}
             </div>
             <CardContent>
                 <div className='w-1/3 text-center'>
-                    <Image width={55} className='mb-2 relative left-1/2 -translate-x-1/2' height={10} src={homeTeam.crest} alt={`escudo do flamengo`}></Image>
+                    <Image width={55} className='mb-2 relative left-1/2 -translate-x-1/2' height={10} src={homeTeam.crest} alt={`escudo do ${homeTeam.shortName}`}></Image>
                     <span className='text-bs font-semibold'>{homeTeam.shortName}</span>
                 </div>
                 <div className='min-w-[33.333333%] h-24   flex items-center justify-center text-3xl font-semibold'>{score.fullTime.home} - {score.fullTime.away}</div>

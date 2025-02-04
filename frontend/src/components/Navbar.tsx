@@ -17,9 +17,8 @@ const Navbar = (props: Props) => {
                     <span className='sm:block hidden  ml-3'>Brasileirão</span>
                     
                 </div>
-                <div className='flex gap-3 sm:gap-0 text-lg items-center justify-around  sm:w-1/4'>
+                <div className='flex gap-3 text-lg items-center '>
                     <Link className='hover:text-[#7bd67b]' href="/">Início</Link>
-                    <Link className='hover:text-[#7bd67b]' href="/jogos">Partidas</Link>
                     <Link className='hover:text-[#7bd67b]' href="/sobre">Sobre nós</Link>
                 </div>
             </div>

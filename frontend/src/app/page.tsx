@@ -1,5 +1,5 @@
 import Hero from "@/components/Hero";
-import Standing from "@/components/Standing";
+import Standing from "@/components/Standings";
 import Image from "next/image";
 
 
