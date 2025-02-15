@@ -7,6 +7,8 @@ import com.gm.brasilerao.feign.dto.ResponseCampeonatoDTO;
 import com.gm.brasilerao.feign.dto.ResponseMatchDTO;
 import com.gm.brasilerao.feign.dto.ResponseTeamDTO;
 import com.gm.brasilerao.feign.controllers.FeignClientCompetition;
+import feign.FeignException;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,43 +26,93 @@ public class ChampionshipService {
 
 
 
-    public ResponseCampeonatoDTO ListStanding(String idCompetition) {
-        var campeonatoDTO = feignClientCompetition.getStanding(idCompetition);
-        ResponseMatchDTO championshipMatches = feignClientCompetition.getAllFinishedMatches(idCompetition);
+    public Resultado<ResponseCampeonatoDTO> ListStanding(String idCompetition) {
+        try {
+            var campeonatoDTO = feignClientCompetition.getStanding(idCompetition).getBody();
+            var championshipMatches = feignClientCompetition.getAllFinishedMatches(idCompetition).getBody();
 
-        List<TableEntryDTO> table = campeonatoDTO.standings().getFirst().table();
+            List<TableEntryDTO> table = campeonatoDTO.standings().getFirst().table();
 
-        List<MatchDTO> matches = championshipMatches.matches();
+            List<MatchDTO> matches = championshipMatches.matches();
 
-        matches.stream().forEach(match -> updateTableWithMatchResult(match, table));
+            matches.stream().forEach(match -> updateTableWithMatchResult(match, table));
 
-//        table.forEach(tableEntryDTO -> {
-//            List<String> formerMatches = tableEntryDTO.formerMatches();
-//            if (formerMatches.size() > 5) {
-//                List<String> lastFiveMatches = new ArrayList<>(formerMatches.subList(formerMatches.size() - 5, formerMatches.size()));
-//                tableEntryDTO.formerMatches().clear();
-//                tableEntryDTO.formerMatches().addAll(lastFiveMatches);
-//            }
-//        });
+            return new Resultado<>(campeonatoDTO);
 
-        return  campeonatoDTO;
-    }
+        }catch (FeignException e){
+            System.out.println("erro na requisição: " + e.getMessage() + e.status());
 
-    public ResponseMatchDTO ListStandingMatches(String idCompetition) {
-        ResponseMatchDTO standingMatches = feignClientCompetition.getAllFinishedMatches(idCompetition);
-        return  standingMatches;
-    }
+            if(e.status()==429){
 
-    public ResponseTeamDTO ListTeams(String idCompetition) {
-        var teams= feignClientCompetition.getTeams(idCompetition);
-        return teams;
+                return new Resultado<>("You reached your request limit");
+            }else{
+                return  new Resultado<>("Erro na requisição");
+            }
+
+
+        }catch (Exception e){
+            return  new Resultado<>("Erro na requisição");
+        }
 
     }
 
+    public Resultado<ResponseMatchDTO> ListStandingMatches(String idCompetition) {
+        try {
+            ResponseMatchDTO standingMatches = feignClientCompetition.getAllFinishedMatches(idCompetition).getBody();
 
-    public ResponseMatchDTO ListLastMatchesByTeam(Integer idTeam,String idCompetition,String status,Integer limit) {
-        var matches=feignClientTeams.getLastMatchesForTeam(idTeam,idCompetition,status,limit) ;
-        return matches;
+            return  new Resultado<>(standingMatches);
+
+        }catch (FeignException e){
+
+            if(e.status()==429){
+                return new Resultado<>("You reached your request limit");
+            }
+
+
+            return new Resultado<>("Erro na requisição");
+        }catch (Exception e){
+            return  new Resultado<>("erro na requisição");
+        }
+
+    }
+
+    public Resultado<ResponseTeamDTO> ListTeams(String idCompetition) {
+        try {
+            var teams= feignClientCompetition.getTeams(idCompetition).getBody();
+            return new Resultado<>(teams);
+        }catch (FeignException e){
+            if(e.status()==429){
+                return new Resultado<>("You reached your request limit");
+            }
+
+            return new Resultado<>("Erro na requisição:"+e.getMessage());
+
+        }catch (Exception e){
+            return new Resultado<>("Erro na requisição:"+e.getMessage());
+        }
+
+
+    }
+
+
+    public Resultado<ResponseMatchDTO> ListLastMatchesByTeam(Integer idTeam,String idCompetition,String status,Integer limit) {
+       try {
+           ResponseMatchDTO matches= feignClientTeams.getLastMatchesForTeam(idTeam,idCompetition,status,limit).getBody();
+           return new Resultado<>(matches);
+
+       }catch (FeignException e){
+           if(e.status()==429){
+               return new Resultado<>("You reached your request limit");
+           }
+            System.out.println("Erro na requisição:"+e.getMessage());
+           return new Resultado<>("Erro na requisição:"+e.getMessage());
+
+       }catch (Exception e){
+           System.out.println("Erro na requisição:"+e.getMessage());
+           return  new Resultado<>("Erro na requisição:"+e.getMessage());
+       }
+
+
     }
 
     private static void updateTableWithMatchResult(MatchDTO match, List<TableEntryDTO> table) {
@@ -115,6 +167,8 @@ public class ChampionshipService {
             loserOptional.get().formerMatches().add("L");
         }
     }
+
+
 
 
 }

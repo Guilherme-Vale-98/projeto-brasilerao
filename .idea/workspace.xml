@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cf6862ea-5145-46db-b060-e19141f94409" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/jogos/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/jogos/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/sobre/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/sobre/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/StandingTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/StandingTable.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/gm/brasilerao/service/Resultado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/gm/brasilerao/controller/BrasileiraoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/gm/brasilerao/controller/BrasileiraoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/gm/brasilerao/feign/controllers/FeignClientCompetition.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/gm/brasilerao/feign/controllers/FeignClientCompetition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/gm/brasilerao/feign/controllers/FeignClientTeams.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/gm/brasilerao/feign/controllers/FeignClientTeams.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/gm/brasilerao/service/ChampionshipService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/gm/brasilerao/service/ChampionshipService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +72,7 @@
       <updated>1722808207233</updated>
       <workItem from="1734619639961" duration="9000" />
       <workItem from="1738428477741" duration="22000" />
+      <workItem from="1739648591138" duration="8000" />
     </task>
     <servers />
   </component>
