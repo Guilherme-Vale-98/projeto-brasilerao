@@ -4,6 +4,7 @@ import { Github, GithubIcon, Instagram, LinkedinIcon } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 import gui from '../../img/gui.jpg'
+import matheus from '../../img/matheus.png'
 type Props = {}
 
 const sobre = (props: Props) => {
@@ -25,9 +26,9 @@ const sobre = (props: Props) => {
                 }} portrait={gui}/>
                 <AboutCard name={'Matheus Lustosa'} description={matheusDescription} socialLinks={{
                     githubURL: 'https://github.com/matheusLustosa23',
-                    linkedinURL: '',
+                    linkedinURL: 'https://www.linkedin.com/in/matheus-lustosa-8472391a3/',
                     instaURL: ''
-                }} portrait={gui}/>
+                }} portrait={matheus}/>
             </div>
 
         </section>
