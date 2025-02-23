@@ -69,7 +69,7 @@ const StandingTable = ({ league, table }: Props) => {
                 {tableItem.goalsFor - tableItem.goalsAgainst}
               </td>
               <td className="mobile-hidden py-2 px-4 whitespace-nowrap">
-                {(tableItem.won / tableItem.playedGames * 100).toFixed(2)}%
+                {tableItem.playedGames === 0? 0 : (tableItem.won / tableItem.playedGames * 100).toFixed(2)}%
               </td>
               <td className="py-2 px-4 flex justify-center gap-1 whitespace-nowrap">
                 {tableItem.formerMatches.slice(-5).map((result, idx) => (
