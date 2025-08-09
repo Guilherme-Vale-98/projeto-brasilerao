@@ -7,7 +7,7 @@ type Props = {
   searchParams: { [key: string]: string | string[] | undefined };
 }
 
-const page = async ({searchParams}: Props) => {
+const page = async ({ searchParams }: Props) => {
   let title = "";
   const leagues = {
     BSA: "Campeonato Brasileiro Série A",
@@ -21,25 +21,24 @@ const page = async ({searchParams}: Props) => {
     PPL: "Primeira Liga",
     CLI: "Copa Libertadores",
     PD: "Primera Division",
-};
-const league = searchParams.league;
-if(typeof league !== "string" || !Object.keys(leagues).includes(league)){
-  redirect('/');
+  };
+  const league = searchParams.league;
+  if (typeof league !== "string" || !Object.keys(leagues).includes(league)) {
+    redirect('/');
   }
-  
-  const res = await fetch(`http://localhost:8080/api/championship/${league}/standings/matches`,
-    { next: { revalidate: 60*30 } }
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/championship/${league}/standings/matches`,
+    { next: { revalidate: 60 * 30 } }
   );
   const data = await res.json();
   const matches: Match[] = data.matches
-  if(matches.length <= 0){
+  if (matches.length <= 0) {
     redirect("/")
   }
   const firstDate = new Date(matches[0].utcDate);
   const secondDate = new Date(matches[matches.length - 1].utcDate);
-  if(secondDate.getFullYear() != firstDate.getFullYear()){
+  if (secondDate.getFullYear() != firstDate.getFullYear()) {
     title = `Jogos da temporada ${firstDate.getFullYear()}-${secondDate.getFullYear()}`
-  }else{
+  } else {
     title = `Jogos da temporada ${firstDate.getFullYear()}`
   }
 
@@ -49,7 +48,7 @@ if(typeof league !== "string" || !Object.keys(leagues).includes(league)){
       <section className='w-[80%] text-white mx-auto '>
         <h1 className='text-3xl text-center font-bold mb-4'>{title}</h1>
         <div>
-          <MatchesGrid matches={matches}/>
+          <MatchesGrid matches={matches} />
         </div>
       </section>
     </div>

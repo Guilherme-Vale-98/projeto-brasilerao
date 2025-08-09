@@ -21,7 +21,7 @@ const sobre = (props: Props) => {
             <div className='flex flex-wrap justify-center my-6 gap-4'>
                 <AboutCard name={'Guilherme Vale'} description={guilhermeDescription} socialLinks={{
                     githubURL: 'https://github.com/Guilherme-Vale-98',
-                    linkedinURL: '',
+                    linkedinURL: 'https://www.linkedin.com/in/guilherme-vale-b49053198/',
                     instaURL: ''
                 }} portrait={gui}/>
                 <AboutCard name={'Matheus Lustosa'} description={matheusDescription} socialLinks={{

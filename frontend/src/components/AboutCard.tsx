@@ -36,13 +36,13 @@ const AboutCard = ({name, description, socialLinks, portrait}: Props) => {
                     <button className='h-10 p-2 sm:h-14 sm:p-4 font-bold border-2 border-black hover:bg-black hover:text-white rounded-md'>PORTFOLIO</button>
                     <div className='flex gap-2'>
                         <div className='hover:bg-black rounded-full flex items-center justify-center w-10 h-10 hover:text-white'>
-                            <Link href={socialLinks.githubURL} ><Github size={30} /> </Link>
+                            <Link target="_blank" rel="noopener noreferrer" href={socialLinks.githubURL} ><Github size={30} /> </Link>
                         </div>
                         <div className='hover:bg-black rounded-full flex items-center justify-center w-10 h-10 hover:text-white'>
-                            <Link href={socialLinks.instaURL}><Instagram size={30}/> </Link>
+                            <Link target="_blank" rel="noopener noreferrer" href={socialLinks.instaURL}><Instagram size={30}/> </Link>
                         </div>
                         <div className='hover:bg-black rounded-full flex items-center justify-center w-10 h-10 hover:text-white'>
-                            <Link href={socialLinks.linkedinURL} ><LinkedinIcon size={30}/> </Link>
+                            <Link target="_blank" rel="noopener noreferrer" href={socialLinks.linkedinURL} ><LinkedinIcon size={30}/> </Link>
                         </div>
                     </div>
                 </div>

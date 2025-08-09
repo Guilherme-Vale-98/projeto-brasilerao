@@ -34,7 +34,7 @@ const Standings = (props: Props) => {
         setLoading(true);
         setError(null);
 
-        fetch(`http://localhost:8080/api/championship/${selectedLeague}/standings`)
+        fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/championship/${selectedLeague}/standings`)
             .then((res) => {
                 if (!res.ok) {
                     throw new Error(`HTTP error! status: ${res.status}`);
@@ -64,7 +64,6 @@ const Standings = (props: Props) => {
         if (loading) return <div>Loading standings...</div>;
         if (error) return <div>Error loading standings: {error}</div>;
         if (matchDay === 0) return <div>Campeonato não começou ainda</div>
-        console.log(competition)
         if (table) return (
             <>
                 <StandingTable league={selectedLeague} table={table} />
